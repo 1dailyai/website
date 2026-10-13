@@ -90,7 +90,8 @@ function startGlobe(cv, CFG) {
         }
       });
       ctx.textBaseline = 'middle';
-      hubs.forEach((h, i) => {
+      const placed = [];
+      (CFG.avoid ? hubs.slice().sort((p, q) => q.main - p.main) : hubs).forEach((h, i) => {
         const s = proj(h.v[0], h.v[1], h.v[2]);
         if (s[2] < 0.06) return;
         const a = Math.min(1, (s[2] - 0.06) * 3);
@@ -98,12 +99,26 @@ function startGlobe(cv, CFG) {
         ctx.globalAlpha = a;
         ctx.fillStyle = dk ? '#0A0A0A' : '#FFFFFF'; ctx.beginPath(); ctx.arc(s[0], s[1], (h.main ? 7 : 5) * dpr, 0, TAU); ctx.fill();
         ctx.fillStyle = dk ? '#F3DE9C' : '#111111'; ctx.beginPath(); ctx.arc(s[0], s[1], (h.main ? 4.5 : 3) * dpr, 0, TAU); ctx.fill();
-        if (CFG.labels && !h.quiet && s[2] > 0.28) {
+        if (CFG.labels && !h.quiet && s[2] > 0.28 && !(CFG.avoid && !h.main && W / dpr < 440)) {
+          const name = CFG.short ? h.n.split(' · ')[0] : h.n;
           ctx.font = (h.main ? '800 ' : '600 ') + ((h.main ? 14 : 12) * dpr) + 'px "Plus Jakarta Sans", system-ui, sans-serif';
           if ('letterSpacing' in ctx) ctx.letterSpacing = (1.4 * dpr) + 'px';
-          const tx = s[0] + 12 * dpr, ty = s[1] - 11 * dpr, tw = ctx.measureText(h.n).width;
-          ctx.fillStyle = dk ? 'rgba(10,10,10,0.78)' : 'rgba(255,255,255,0.85)'; ctx.fillRect(tx - 4 * dpr, ty - 9 * dpr, tw + 8 * dpr, 18 * dpr);
-          ctx.fillStyle = dk ? (h.main ? '#FFFFFF' : '#CFCFCF') : (h.main ? '#111111' : '#3A3A3A'); ctx.fillText(h.n, tx, ty);
+          const tw = ctx.measureText(name).width;
+          const opts = CFG.avoid ? [[1, -1], [1, 1], [-1, -1], [-1, 1]] : [[1, -1]];
+          let tx = 0, ty = 0, box = null, hit = true;
+          for (let k = 0; k < opts.length && hit; k++) {
+            tx = opts[k][0] > 0 ? s[0] + 12 * dpr : s[0] - 12 * dpr - tw;
+            ty = s[1] + opts[k][1] * 11 * dpr;
+            box = [tx - 4 * dpr, ty - 9 * dpr, tw + 8 * dpr, 18 * dpr];
+            const out = CFG.avoid && (box[0] < 0 || box[0] + box[2] > W);
+            hit = out || (CFG.avoid && placed.some((b) => box[0] < b[0] + b[2] && box[0] + box[2] > b[0] && box[1] < b[1] + b[3] && box[1] + box[3] > b[1]));
+          }
+          if (!CFG.avoid) hit = false;
+          if (!hit) {
+            placed.push(box);
+            ctx.fillStyle = dk ? 'rgba(10,10,10,0.78)' : 'rgba(255,255,255,0.85)'; ctx.fillRect(box[0], box[1], box[2], box[3]);
+            ctx.fillStyle = dk ? (h.main ? '#FFFFFF' : '#CFCFCF') : (h.main ? '#111111' : '#3A3A3A'); ctx.fillText(name, tx, ty);
+          }
         }
         ctx.globalAlpha = 1;
       });

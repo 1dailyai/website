@@ -74,3 +74,19 @@ html[data-theme="dark"] .ms-open .ms-tag{border-color:#2A2A2A}
 html[data-theme="dark"] .track{background:rgba(255,255,255,.03);border-color:#3A301C}
 html[data-theme="dark"] .v2-badge{background:#F5F5F5;color:#0A0A0A}
 html[data-theme="dark"] .v2-badge a{color:#8A6219}
+/* Goldmarkt – dunkel */
+html[data-theme="dark"] .gstat{background:#121212;border-color:#242424}
+html[data-theme="dark"] .gstat-k small{color:#F5F5F5;-webkit-text-fill-color:#F5F5F5}
+html[data-theme="dark"] .gc-grid line{stroke:#252525}
+html[data-theme="dark"] .gc-axis text,html[data-theme="dark"] .gc-lbl-s{fill:#8E8E8E}
+html[data-theme="dark"] .gc-line{stroke:#D9B45E}
+html[data-theme="dark"] .gc-pt{fill:#D9B45E;stroke:#0A0A0A}
+html[data-theme="dark"] .gc-x{stroke:#F5F5F5}
+html[data-theme="dark"] .gc-tip{background:#F5F5F5;color:#0A0A0A}
+html[data-theme="dark"] .gc-tip b{color:#8A6219}
+html[data-theme="dark"] .sess-t{background:#121212;border-color:#242424}
+html[data-theme="dark"] .sess-cfd .sess-b{background:#F5F5F5}
+html[data-theme="dark"] .sess-cfd .sess-b span{color:#0A0A0A}
+html[data-theme="dark"] .venue-tags i{border-color:#5C4A22}
+html[data-theme="dark"] .vbar-t{background:#2A2418}
+html[data-theme="dark"] .gm-1d .risk{background:#121212;border-color:#242424}
