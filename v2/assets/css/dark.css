@@ -90,3 +90,4 @@ html[data-theme="dark"] .sess-cfd .sess-b span{color:#0A0A0A}
 html[data-theme="dark"] .venue-tags i{border-color:#5C4A22}
 html[data-theme="dark"] .vbar-t{background:#2A2418}
 html[data-theme="dark"] .gm-1d .risk{background:#121212;border-color:#242424}
+html[data-theme="dark"].scrolled .site-header .wordmark,html[data-theme="dark"].scrolled .site-header .hdr-right{background-color:rgba(14,14,14,.66);border-color:rgba(255,255,255,.08);box-shadow:0 12px 32px -18px rgba(0,0,0,.8)}

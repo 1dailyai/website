@@ -460,3 +460,18 @@ html[data-theme="dark"] .wordmark .logo-d{display:block}
 .gm-drivers{grid-template-columns:repeat(3,minmax(0,1fr))}
 .gm-1d .risk{background:#FFF;border:1.5px solid var(--line)}
 @media (max-width:860px){.gm-drivers{grid-template-columns:1fr}}
+
+/* Fixierter, transparenter Header: Logo und Navigation bleiben beim Scrollen an derselben Stelle */
+html{scroll-padding-top:112px}
+.site-header{position:sticky;top:0;z-index:60;pointer-events:none}
+.site-header .wordmark,.site-header .hdr-right{pointer-events:auto;border-radius:999px;border:1px solid transparent;transition:background-color .3s ease,border-color .3s ease,box-shadow .3s ease,-webkit-backdrop-filter .3s ease,backdrop-filter .3s ease}
+.site-header .wordmark{padding:12px 18px;margin:-12px -18px}
+.site-header .hdr-right{padding:6px 8px 6px 24px;margin:-6px -8px -6px -24px}
+.scrolled .site-header .wordmark,.scrolled .site-header .hdr-right{background-color:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(16px) saturate(1.6);backdrop-filter:blur(16px) saturate(1.6);border-color:rgba(15,15,15,.06);box-shadow:0 12px 32px -20px rgba(15,15,15,.45)}
+.venue-globe{top:124px}
+@media (max-width:860px){
+  html{scroll-padding-top:96px}
+  .site-header .wrap{padding-top:20px;padding-bottom:20px}
+  .site-header .wordmark{padding:10px 14px;margin:-10px -14px}
+  .site-header .hdr-right{padding:3px 12px 3px 4px;margin:-3px -12px -3px -4px}
+}

@@ -104,3 +104,11 @@
   }
   sync();
 })();
+
+/* Header: Hinterlegung für Logo und Navigation, sobald gescrollt wird */
+(function () {
+  var d = document.documentElement, busy = false;
+  var update = function () { busy = false; d.classList.toggle('scrolled', (window.scrollY || window.pageYOffset || 0) > 8); };
+  window.addEventListener('scroll', function () { if (!busy) { busy = true; requestAnimationFrame(update); } }, { passive: true });
+  update();
+})();
