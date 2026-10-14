@@ -102,3 +102,4 @@ html[data-theme="dark"] .ntl-block{background:repeating-linear-gradient(135deg,r
 html[data-theme="dark"] .ntl-go{background:linear-gradient(90deg,rgba(217,180,94,.45),rgba(217,180,94,.12));color:#F6E3A6}
 html[data-theme="dark"] .mformula{background:#121212;border-color:#3A301C}
 html[data-theme="dark"] .mfrac span:first-child{border-color:#F5F5F5}
+html[data-theme="dark"] .mpdf{border:1.5px solid #3A301C}
