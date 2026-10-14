@@ -468,10 +468,11 @@ html{scroll-padding-top:112px}
 .site-header .wordmark{padding:12px 18px;margin:-12px -18px}
 .site-header .hdr-right{padding:6px 8px 6px 24px;margin:-6px -8px -6px -24px}
 .scrolled .site-header .wordmark,.scrolled .site-header .hdr-right{background-color:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(16px) saturate(1.6);backdrop-filter:blur(16px) saturate(1.6);border-color:rgba(15,15,15,.06);box-shadow:0 12px 32px -20px rgba(15,15,15,.45)}
-.venue-globe{top:124px}
+@media (min-width:1001px){.venue-globe{top:124px}}
 @media (max-width:860px){
   html{scroll-padding-top:96px}
   .site-header .wrap{padding-top:20px;padding-bottom:20px}
   .site-header .wordmark{padding:10px 14px;margin:-10px -14px}
   .site-header .hdr-right{padding:3px 12px 3px 4px;margin:-3px -12px -3px -4px}
 }
+@media (max-width:1000px){#boersenplaetze .sec-head,#venues .sec-head{margin-bottom:12px}.venue-wrap{gap:0}.venue-globe{width:calc(100% + 24px);max-width:540px;margin:0 -12px}}

@@ -90,7 +90,7 @@ function startGlobe(cv, CFG) {
         }
       });
       ctx.textBaseline = 'middle';
-      const placed = [];
+      const placed = [], later = [];
       (CFG.avoid ? hubs.slice().sort((p, q) => q.main - p.main) : hubs).forEach((h, i) => {
         const s = proj(h.v[0], h.v[1], h.v[2]);
         if (s[2] < 0.06) return;
@@ -116,12 +116,18 @@ function startGlobe(cv, CFG) {
           if (!CFG.avoid) hit = false;
           if (!hit) {
             placed.push(box);
-            ctx.fillStyle = dk ? 'rgba(10,10,10,0.78)' : 'rgba(255,255,255,0.85)'; ctx.fillRect(box[0], box[1], box[2], box[3]);
-            ctx.fillStyle = dk ? (h.main ? '#FFFFFF' : '#CFCFCF') : (h.main ? '#111111' : '#3A3A3A'); ctx.fillText(name, tx, ty);
+            const font = ctx.font, al = ctx.globalAlpha, ls = ctx.letterSpacing;
+            const paint = () => {
+              ctx.font = font; ctx.globalAlpha = al; if ('letterSpacing' in ctx) ctx.letterSpacing = ls;
+              ctx.fillStyle = dk ? 'rgba(10,10,10,0.78)' : 'rgba(255,255,255,0.85)'; ctx.fillRect(box[0], box[1], box[2], box[3]);
+              ctx.fillStyle = dk ? (h.main ? '#FFFFFF' : '#CFCFCF') : (h.main ? '#111111' : '#3A3A3A'); ctx.fillText(name, tx, ty);
+            };
+            if (CFG.avoid) later.push(paint); else paint();
           }
         }
         ctx.globalAlpha = 1;
       });
+      later.forEach((f) => f()); ctx.globalAlpha = 1;
     };
     const size = () => {
       dpr = Math.min(window.devicePixelRatio || 1, 2);
