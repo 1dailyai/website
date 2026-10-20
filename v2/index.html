@@ -24,7 +24,7 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <script>(function(){var d=document.documentElement,s=null;try{var q=new URLSearchParams(location.search).get("theme");if(q==="dark"||q==="light")localStorage.setItem("theme",q);s=localStorage.getItem("theme")}catch(e){}var dark=s?s==="dark":!!(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);if(dark)d.setAttribute("data-theme","dark")})();</script>
-<link rel="stylesheet" href="assets/css/style.css?v=26">
+<link rel="stylesheet" href="assets/css/style.css?v=27">
 <link rel="stylesheet" href="assets/css/dark.css?v=26">
 <script>
 /* Spracherkennung: Deutsch ist Standard; ohne Deutsch im Browser → Englisch. Manuelle Wahl hat Vorrang. */
@@ -50,6 +50,10 @@ if(want!==cur){var alt=document.querySelector('link[rel=alternate][hreflang='+wa
 </div>
 <main id="main">
 
+<div class="vstage">
+<img class="vposter" src="assets/video/hero-poster.jpg" alt="" aria-hidden="true">
+<video autoplay muted loop playsinline preload="auto" poster="assets/video/hero-poster.jpg" aria-hidden="true"><source src="assets/video/hero-720.mp4" type="video/mp4" media="(max-width: 860px)"><source src="assets/video/hero.webm" type="video/webm"><source src="assets/video/hero.mp4" type="video/mp4"></video>
+<div class="vshade"></div>
 <section class="hero">
 <div class="pill up"><span class="dot blink"></span>1daily AG · Schweizer Handelstechnologie</div>
 <h1 class="h-xl up u1">Die künstliche Intelligenz analysiert.<br>Der Mensch handelt.<br><span class="gold">Das System schützt.</span></h1>
@@ -57,6 +61,7 @@ if(want!==cur){var alt=document.querySelector('link[rel=alternate][hreflang='+wa
 <p class="lead" id="hero-lead">Die 1daily AG ist ein Schweizer Technologieunternehmen für den Goldmarkt. Unsere Software Goldcheck analysiert den Markt mit künstlicher Intelligenz und liefert präzise Signale. Erfahrene Trader setzen sie in kurzen, gezielten Trades um, und RiskGuard&nbsp;by&nbsp;1daily sichert jede Position automatisch ab. Unser Ziel: das Kapital unserer Aktionärinnen und Aktionäre langfristig und nachhaltig wachsen zu lassen.</p>
 <button class="more" type="button" data-more="hero-lead" aria-expanded="false" aria-controls="hero-lead"></button></div>
 </section>
+</div>
 <section class="globe-stage zoom" aria-label="Globus der wichtigsten Goldhandelsplätze">
 <div class="globe-box"><canvas id="globe" data-cfg='{"lon0":6,"tilt":0.62,"scale":0.47,"speed":0.00005,"period":7600,"labels":true}' role="img" aria-label="Rotierender Globus mit goldenen Verbindungen zwischen den wichtigsten Goldhandelsplätzen: London (LBMA), Zürich, Frankfurt, COMEX New York, SHFE Shanghai, JPX Osaka, MCX Mumbai, DGCX Dubai und Borsa İstanbul."></canvas></div>
 <div class="globe-fade"></div>
