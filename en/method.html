@@ -23,8 +23,8 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="preload" href="../assets/fonts/plus-jakarta-sans-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <script>(function(){var d=document.documentElement,s=null;try{var q=new URLSearchParams(location.search).get("theme");if(q==="dark"||q==="light")localStorage.setItem("theme",q);s=localStorage.getItem("theme")}catch(e){}var dark=s?s==="dark":!!(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);if(dark)d.setAttribute("data-theme","dark")})();</script>
-<link rel="stylesheet" href="../assets/css/style.css?v=29">
-<link rel="stylesheet" href="../assets/css/dark.css?v=26">
+<link rel="stylesheet" href="../assets/css/style.css?v=30">
+<link rel="stylesheet" href="../assets/css/dark.css?v=27">
 <script>
 /* Spracherkennung: Deutsch ist Standard; ohne Deutsch im Browser → Englisch. Manuelle Wahl hat Vorrang. */
 (function(){try{if(/bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent))return;var cur=document.documentElement.lang,s=localStorage.getItem('lang'),want=s;
@@ -95,21 +95,13 @@ if(want!==cur){var alt=document.querySelector('link[rel=alternate][hreflang='+wa
 <div class="reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:28px">
 <h2 class="h-l">Capital protection before <span class="gold">market opinion.</span></h2>
 <p style="font-size:19px;max-width:420px">A correct market view is worthless if risk management fails. That is why fixed limits apply, enforced technically by RiskGuard&nbsp;by&nbsp;1daily.</p></div>
-<div class="rules"><div class="reveal"><div class="big gold">1%</div><span>risk per trade</span></div><div class="reveal"><div class="big gold">3%</div><span>maximum risk per day</span></div><div class="reveal"><div class="big gold">3</div><span>simultaneous positions</span></div><div class="reveal"><div class="big gold">100%</div><span>of trades with a stop-loss from entry</span></div></div>
+<div class="rules"><div class="reveal"><div class="big gold">3%</div><span>maximum risk per day</span></div><div class="reveal"><div class="big gold">3</div><span>simultaneous positions</span></div><div class="reveal"><div class="big gold">100%</div><span>of trades with a stop-loss from entry</span></div></div>
 <div class="mnever reveal"><div><b>Never move it</b><p>A stop-loss is never moved or widened.</p></div><div><b>Never add to losers</b><p>No larger positions to win back losses.</p></div><div><b>Never trade tired</b><p>Trading stops immediately when tired, frustrated or stressed.</p></div></div>
 </div></section>
 
-<section class="wrap sec" id="positionsgroesse">
-<div class="sec-head reveal"><div class="eyebrow">Position size</div><h2 class="h-l">The same risk. <span class="gold">In every market.</span></h2></div>
-<div class="msize reveal">
-<div class="stack" style="gap:24px"><p class="body">The stop-loss sits where market structure requires it, not at an arbitrary 20 pips. The lot size adapts to that distance, so the potential loss per trade stays the same, however volatile gold is.</p><div class="mformula" role="math" aria-label="Lot size = (Account balance × risk per trade) / (Stop distance in USD × 100)"><span class="mlhs">Lot size <em>=</em></span><span class="mfrac"><span>Account balance × risk per trade</span><span>Stop distance in USD × 100</span></span></div><p class="mnote" style="margin-top:0">One standard lot of XAUUSD is 100 troy ounces. A USD 10 move changes a 1.0 lot position by USD 1,000.</p></div>
-<div><div class="eyebrow" style="margin-bottom:18px;color:var(--muted)">Example · account USD 100,000 · 1% risk per trade</div><div class="mtable-wrap"><table class="mtable"><thead><tr><th>Stop distance</th><th>Market phase</th><th class="r">Lot size</th><th class="r">Loss at stop</th></tr></thead><tbody><tr><td>USD 2</td><td>low volatility</td><td class="r">5.00</td><td class="r">USD 1,000</td></tr><tr><td>USD 5</td><td>normal volatility</td><td class="r">2.00</td><td class="r">USD 1,000</td></tr><tr><td>USD 10</td><td>high volatility</td><td class="r">1.00</td><td class="r">USD 1,000</td></tr><tr><td>USD 20</td><td>news spike</td><td class="r">0.50</td><td class="r">USD 1,000</td></tr></tbody></table></div><p class="mnote">Simplified calculation excluding spread and commission.</p></div>
-</div>
-</section>
-
 <section class="bg-cream"><div class="wrap sec">
 <div class="sec-head reveal"><div class="eyebrow">Three roles</div><h2 class="h-l">Artificial intelligence analyses. People trade. <span class="gold">The system protects.</span></h2></div>
-<div class="grid g3 mcards"><article class="card"><div class="eyebrow">Analyse</div><h3>Goldcheck</h3><p>Provides the context the method requires: technical picture, institutional factors such as VWAP and volume, macro drivers such as the dollar and US yields, and event risks. The result is a signal from Strong Sell to Strong Buy with a confidence score, or “No Trade” when uncertainty is high.</p></article><article class="card"><div class="eyebrow">Trade</div><h3>The trader</h3><p>Checks the five conditions on the chart, sets entry, stop-loss and target, and decides. Responsibility for every trade stays with the person.</p></article><article class="card"><div class="eyebrow">Protect</div><h3>RiskGuard by 1daily</h3><p>Enforces the risk rules technically: risk per trade and per day, mandatory stop-loss, position limit, a block around economic news and a pause after losses.</p></article></div>
+<div class="grid g3 mcards"><article class="card"><div class="eyebrow">Analyse</div><h3>Goldcheck</h3><p>Provides the context the method requires: technical picture, institutional factors such as VWAP and volume, macro drivers such as the dollar and US yields, and event risks. The result is a signal from Strong Sell to Strong Buy with a confidence score, or “No Trade” when uncertainty is high.</p></article><article class="card"><div class="eyebrow">Trade</div><h3>The trader</h3><p>Checks the five conditions on the chart, sets entry, stop-loss and target, and decides. Responsibility for every trade stays with the person.</p></article><article class="card"><div class="eyebrow">Protect</div><h3>RiskGuard by 1daily</h3><p>Enforces the risk rules technically: risk per day, mandatory stop-loss, position limit, a block around economic news and a pause after losses.</p></article></div>
 </div></section>
 
 <section class="wrap sec" id="pdf">

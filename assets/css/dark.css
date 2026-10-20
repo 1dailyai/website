@@ -101,3 +101,4 @@ html[data-theme="dark"] .ntl-go{background:linear-gradient(90deg,rgba(217,180,94
 html[data-theme="dark"] .mformula{background:#121212;border-color:#3A301C}
 html[data-theme="dark"] .mfrac span:first-child{border-color:#F5F5F5}
 html[data-theme="dark"] .mpdf{border:1.5px solid #3A301C}
+html[data-theme="dark"] .tr-card{background:linear-gradient(160deg,#17130B 0%,#100E0A 100%);border-color:#3A301C}

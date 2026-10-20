@@ -23,8 +23,8 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <script>(function(){var d=document.documentElement,s=null;try{var q=new URLSearchParams(location.search).get("theme");if(q==="dark"||q==="light")localStorage.setItem("theme",q);s=localStorage.getItem("theme")}catch(e){}var dark=s?s==="dark":!!(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);if(dark)d.setAttribute("data-theme","dark")})();</script>
-<link rel="stylesheet" href="assets/css/style.css?v=29">
-<link rel="stylesheet" href="assets/css/dark.css?v=26">
+<link rel="stylesheet" href="assets/css/style.css?v=30">
+<link rel="stylesheet" href="assets/css/dark.css?v=27">
 <script>
 /* Spracherkennung: Deutsch ist Standard; ohne Deutsch im Browser → Englisch. Manuelle Wahl hat Vorrang. */
 (function(){try{if(/bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent))return;var cur=document.documentElement.lang,s=localStorage.getItem('lang'),want=s;
@@ -95,21 +95,13 @@ if(want!==cur){var alt=document.querySelector('link[rel=alternate][hreflang='+wa
 <div class="reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:28px">
 <h2 class="h-l">Kapitalschutz vor <span class="gold">Marktmeinung.</span></h2>
 <p style="font-size:19px;max-width:420px">Eine richtige Markteinschätzung ist wertlos, wenn das Risikomanagement versagt. Darum gelten feste Grenzen, die RiskGuard&nbsp;by&nbsp;1daily technisch durchsetzt.</p></div>
-<div class="rules"><div class="reveal"><div class="big gold">1 %</div><span>Risiko pro Trade</span></div><div class="reveal"><div class="big gold">3 %</div><span>maximales Risiko pro Tag</span></div><div class="reveal"><div class="big gold">3</div><span>gleichzeitige Positionen</span></div><div class="reveal"><div class="big gold">100 %</div><span>Trades mit Stop-Loss ab Einstieg</span></div></div>
+<div class="rules"><div class="reveal"><div class="big gold">3 %</div><span>maximales Risiko pro Tag</span></div><div class="reveal"><div class="big gold">3</div><span>gleichzeitige Positionen</span></div><div class="reveal"><div class="big gold">100 %</div><span>Trades mit Stop-Loss ab Einstieg</span></div></div>
 <div class="mnever reveal"><div><b>Nie verschieben</b><p>Ein Stop-Loss wird weder verschoben noch ausgeweitet.</p></div><div><b>Nie aufstocken</b><p>Keine grösseren Positionen, um Verluste zurückzuholen.</p></div><div><b>Nie müde handeln</b><p>Bei Müdigkeit, Frust oder Stress wird der Handel sofort beendet.</p></div></div>
 </div></section>
 
-<section class="wrap sec" id="positionsgroesse">
-<div class="sec-head reveal"><div class="eyebrow">Positionsgrösse</div><h2 class="h-l">Gleiches Risiko. <span class="gold">In jedem Markt.</span></h2></div>
-<div class="msize reveal">
-<div class="stack" style="gap:24px"><p class="body">Der Stop-Loss liegt dort, wo die Marktstruktur ihn verlangt, nicht bei willkürlichen 20 Pips. Die Lotgrösse passt sich dieser Distanz an. So bleibt der mögliche Verlust pro Trade gleich, egal wie volatil Gold gerade ist.</p><div class="mformula" role="math" aria-label="Lotgrösse = (Kontostand × Risiko pro Trade) / (Stop-Distanz in USD × 100)"><span class="mlhs">Lotgrösse <em>=</em></span><span class="mfrac"><span>Kontostand × Risiko pro Trade</span><span>Stop-Distanz in USD × 100</span></span></div><p class="mnote" style="margin-top:0">Ein Standard-Lot XAUUSD entspricht 100 Feinunzen. Eine Bewegung von 10 USD verändert eine Position von 1,0 Lot um 1'000 USD.</p></div>
-<div><div class="eyebrow" style="margin-bottom:18px;color:var(--muted)">Beispiel · Konto 100'000 USD · Risiko 1 % pro Trade</div><div class="mtable-wrap"><table class="mtable"><thead><tr><th>Stop-Distanz</th><th>Marktphase</th><th class="r">Lotgrösse</th><th class="r">Verlust bei Stop</th></tr></thead><tbody><tr><td>2 USD</td><td>tiefe Volatilität</td><td class="r">5,00</td><td class="r">1'000 USD</td></tr><tr><td>5 USD</td><td>normale Volatilität</td><td class="r">2,00</td><td class="r">1'000 USD</td></tr><tr><td>10 USD</td><td>hohe Volatilität</td><td class="r">1,00</td><td class="r">1'000 USD</td></tr><tr><td>20 USD</td><td>News-Spike</td><td class="r">0,50</td><td class="r">1'000 USD</td></tr></tbody></table></div><p class="mnote">Vereinfachte Rechnung ohne Spread und Kommission.</p></div>
-</div>
-</section>
-
 <section class="bg-cream"><div class="wrap sec">
 <div class="sec-head reveal"><div class="eyebrow">Drei Rollen</div><h2 class="h-l">Die künstliche Intelligenz analysiert. Der Mensch handelt. <span class="gold">Das System schützt.</span></h2></div>
-<div class="grid g3 mcards"><article class="card"><div class="eyebrow">Analysieren</div><h3>Goldcheck</h3><p>Liefert den Kontext, den die Methode verlangt: technische Lage, institutionelle Faktoren wie VWAP und Volumen, Makrotreiber wie Dollar und US-Renditen sowie Event-Risiken. Das Ergebnis ist ein Signal von Strong Sell bis Strong Buy mit Confidence-Wert, bei hoher Unsicherheit «No Trade».</p></article><article class="card"><div class="eyebrow">Handeln</div><h3>Der Trader</h3><p>Prüft die fünf Bedingungen am Chart, legt Entry, Stop-Loss und Ziel fest und entscheidet. Die Verantwortung für jeden Trade bleibt beim Menschen.</p></article><article class="card"><div class="eyebrow">Schützen</div><h3>RiskGuard by 1daily</h3><p>Setzt die Risikoregeln technisch durch: Risiko pro Trade und pro Tag, Stop-Loss-Pflicht, Positionslimit, Sperre rund um Wirtschaftsnews und Pause nach Verlusten.</p></article></div>
+<div class="grid g3 mcards"><article class="card"><div class="eyebrow">Analysieren</div><h3>Goldcheck</h3><p>Liefert den Kontext, den die Methode verlangt: technische Lage, institutionelle Faktoren wie VWAP und Volumen, Makrotreiber wie Dollar und US-Renditen sowie Event-Risiken. Das Ergebnis ist ein Signal von Strong Sell bis Strong Buy mit Confidence-Wert, bei hoher Unsicherheit «No Trade».</p></article><article class="card"><div class="eyebrow">Handeln</div><h3>Der Trader</h3><p>Prüft die fünf Bedingungen am Chart, legt Entry, Stop-Loss und Ziel fest und entscheidet. Die Verantwortung für jeden Trade bleibt beim Menschen.</p></article><article class="card"><div class="eyebrow">Schützen</div><h3>RiskGuard by 1daily</h3><p>Setzt die Risikoregeln technisch durch: Risiko pro Tag, Stop-Loss-Pflicht, Positionslimit, Sperre rund um Wirtschaftsnews und Pause nach Verlusten.</p></article></div>
 </div></section>
 
 <section class="wrap sec" id="pdf">
