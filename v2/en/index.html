@@ -24,7 +24,7 @@
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="preload" href="../assets/fonts/plus-jakarta-sans-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <script>(function(){var d=document.documentElement,s=null;try{var q=new URLSearchParams(location.search).get("theme");if(q==="dark"||q==="light")localStorage.setItem("theme",q);s=localStorage.getItem("theme")}catch(e){}var dark=s?s==="dark":!!(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);if(dark)d.setAttribute("data-theme","dark")})();</script>
-<link rel="stylesheet" href="../assets/css/style.css?v=27">
+<link rel="stylesheet" href="../assets/css/style.css?v=28">
 <link rel="stylesheet" href="../assets/css/dark.css?v=26">
 <script>
 /* Spracherkennung: Deutsch ist Standard; ohne Deutsch im Browser → Englisch. Manuelle Wahl hat Vorrang. */
@@ -52,8 +52,9 @@ if(want!==cur){var alt=document.querySelector('link[rel=alternate][hreflang='+wa
 
 <div class="vstage">
 <img class="vposter" src="../assets/video/hero-poster.jpg" alt="" aria-hidden="true">
-<video autoplay muted loop playsinline preload="auto" poster="../assets/video/hero-poster.jpg" aria-hidden="true"><source src="../assets/video/hero-720.mp4" type="video/mp4" media="(max-width: 860px)"><source src="../assets/video/hero.webm" type="video/webm"><source src="../assets/video/hero.mp4" type="video/mp4"></video>
+<video autoplay muted loop playsinline preload="auto" poster="../assets/video/hero-poster.jpg" aria-hidden="true"><source src="../assets/video/hero-720.mp4" type="video/mp4" media="(max-width: 860px)"><source src="../assets/video/hero.mp4" type="video/mp4"><source src="../assets/video/hero.webm" type="video/webm"></video>
 <div class="vshade"></div>
+<button class="vplay" type="button" hidden><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>Play video</button>
 <section class="hero">
 <div class="pill up"><span class="dot blink"></span>1daily AG · Swiss trading technology</div>
 <h1 class="h-xl up u1">Artificial intelligence analyses.<br>People trade.<br><span class="gold">The system protects.</span></h1>
@@ -62,13 +63,6 @@ if(want!==cur){var alt=document.querySelector('link[rel=alternate][hreflang='+wa
 <button class="more" type="button" data-more="hero-lead" aria-expanded="false" aria-controls="hero-lead"></button></div>
 </section>
 </div>
-<section class="globe-stage zoom" aria-label="Globe of the leading gold trading hubs">
-<div class="globe-box"><canvas id="globe" data-cfg='{"lon0":6,"tilt":0.62,"scale":0.47,"speed":0.00005,"period":7600,"labels":true}' role="img" aria-label="Rotating globe with golden links between the leading gold trading hubs: London (LBMA), Zurich, Frankfurt, COMEX New York, SHFE Shanghai, JPX Osaka, MCX Mumbai, DGCX Dubai and Borsa İstanbul."></canvas></div>
-<div class="globe-fade"></div>
-<div class="chip float f1" style="left:3%;top:56%"><b>Goldcheck</b><span>6 AI layers, one clear signal</span></div>
-<div class="chip float f2" style="right:3%;top:18%"><b>RiskGuard&nbsp;by&nbsp;1daily</b><span>Every position systematically protected</span></div>
-<div class="chip float f3" style="right:9%;top:62%"><b>Switzerland</b><span>50–70% of newly mined gold is refined here</span></div>
-</section>
 <section class="wrap statement"><h2 class="reveal"><span class="muted">More data. Clearer signals. Precise execution.</span> Our strategy for growing capital.</h2>
 <div class="reveal" style="margin-top:44px"><a class="btn btn-dark" href="investor-relations.html#form">Become an investor</a></div></section>
 <section class="wrap" style="padding-bottom:160px"><div class="grid g3" data-flow><article class="card reveal"><div class="icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.6" aria-hidden="true"><path d="M3 17l5-6 4 3 6-8 3 3"/><path d="M3 21h18"/></svg></div><div class="eyebrow">The analysis</div><h3>Goldcheck</h3><p>Six AI layers condense technical analysis, macro data, institutional market data and news into one clear signal, complete with the reasons behind it.</p></article><article class="card reveal"><div class="icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.6" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div><div class="eyebrow">The execution</div><h3>The trader</h3><p>Experienced traders turn the signals into short, targeted trades: fast, precise and with clearly defined entries and exits.</p></article><article class="card reveal"><div class="icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v9M9.5 10h4a1.5 1.5 0 010 3h-3a1.5 1.5 0 000 3h4"/></svg></div><div class="eyebrow">Protector</div><h3>RiskGuard&nbsp;by&nbsp;1daily</h3><p>Protects every position automatically. Capital protection rests with the system, not with a person’s mood on any given day.</p></article></div></section>
@@ -96,8 +90,17 @@ if(want!==cur){var alt=document.querySelector('link[rel=alternate][hreflang='+wa
 <p class="foot-legal">No investment advice. No guaranteed returns. Investments in start-ups and trading in financial instruments can lead to a total loss. © 2026 1daily AG · Hardeggweg 2, 3612 Steffisburg, Switzerland · CHE-344.641.720</p>
 </div></footer>
 <script src="../assets/js/config.js?v=5"></script>
-<script src="../assets/js/globe.js?v=13"></script>
 <script src="../assets/js/anim.js?v=5"></script>
+<script>
+/* Video-Hero: startet automatisch; wo der Browser das blockiert (z. B. Stromsparmodus) oder «Bewegung reduzieren» aktiv ist, erscheint ein Abspielknopf. */
+(function(){var v=document.querySelector('.vstage video'),b=document.querySelector('.vplay');if(!v||!b)return;
+var show=function(){if(v.paused)b.hidden=false},hide=function(){b.hidden=true};
+b.addEventListener('click',function(){v.muted=true;var p=v.play();if(p&&p.then)p.then(hide).catch(function(){});});
+v.addEventListener('playing',hide);
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();b.hidden=false;return;}
+v.muted=true;var p=v.play();if(p&&p.catch)p.catch(show);
+setTimeout(show,3000);})();
+</script>
 <script src="../assets/js/main.js?v=11"></script>
 <div class="v2-badge">Preview version 2 · <a href="../../en/index.html">to the current version</a></div>
 </body>

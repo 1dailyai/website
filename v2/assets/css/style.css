@@ -582,4 +582,8 @@ html body .vstage .pill{color:#F1F1F1;border-color:rgba(217,180,94,.55);backgrou
 html body .vstage .more{color:#E2C27A}
 html body .vstage .gold{background-image:linear-gradient(100deg,#C9A14E 0%,#F6E3A6 40%,#E2C27A 60%,#C9A14E 80%,#F6E3A6 100%)}
 @media (max-width:860px){.vstage .pill{font-size:12px;padding:8px 14px}.vstage{margin:0 12px;border-radius:24px}.vstage .hero{padding-top:72px;padding-bottom:72px}}
-@media (prefers-reduced-motion:reduce){.vstage video{display:none}}
+.vplay{position:absolute;right:20px;bottom:20px;z-index:3;display:inline-flex;align-items:center;gap:10px;padding:12px 18px 12px 14px;border-radius:999px;border:1.5px solid rgba(217,180,94,.6);background:rgba(10,10,10,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#F3DE9C;font:700 14px/1 "Plus Jakarta Sans",sans-serif;cursor:pointer}
+.vplay[hidden]{display:none}
+.vplay:hover{border-color:#F3DE9C}
+.vstage+.statement{padding-top:140px}
+@media (max-width:860px){.vstage+.statement{padding-top:88px}}
