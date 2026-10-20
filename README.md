@@ -6,17 +6,21 @@ Statische, zweisprachige Website (Deutsch / Englisch) ohne Build-Schritt. Läuft
 
 ```
 /                         Deutsch (Standard)
-  index.html              Startseite mit 3D-Globus
+  index.html              Startseite mit Video-Hero
   vision.html             Vision & Philosophie
+  goldmarkt.html          Goldmarkt mit 3D-Globus der Handelsplätze
+  methode.html            Die 1daily-Methode (mit PDF-Download)
   ueber-uns.html          Über uns
   investor-relations.html Investor Relations + Formular
   kontakt.html            Kontakt + Formular + Impressum
   datenschutz.html        Datenschutzerklärung
-/en/                      Englisch (index, vision, about, investor-relations, contact, privacy)
-/assets/css/style.css     Gesamtes Design
+/en/                      Englisch (index, vision, gold-market, method, about, investor-relations, contact, privacy)
+/assets/css/style.css     Gesamtes Design (dark.css: Dunkelmodus)
 /assets/js/config.js      ← HIER Formspree-IDs und E-Mail-Adressen eintragen
 /assets/js/main.js        Menü, Sprachwahl, Formulare
-/assets/js/globe.js       3D-Globus (Gold-Futures-Börsen)
+/assets/js/globe.js       3D-Globus (Seite Goldmarkt)
+/assets/video/            Hero-Video (hero.mp4, hero-720.mp4 für Mobile, hero.webm, hero-poster.jpg)
+/assets/docs/             Methode als PDF (DE/EN)
 /assets/fonts/            Plus Jakarta Sans, lokal gehostet (kein Google Fonts)
 404.html, robots.txt, .nojekyll
 ```
@@ -27,7 +31,7 @@ Statische, zweisprachige Website (Deutsch / Englisch) ohne Build-Schritt. Läuft
 2. Repository → **Settings → Pages** → Source: *Deploy from a branch* → Branch `main`, Ordner `/ (root)` → Save.
 3. Eigene Domain: unter *Settings → Pages → Custom domain* eintragen (GitHub legt die Datei `CNAME` an) und beim Domain-Anbieter die DNS-Einträge gemäss GitHub-Anleitung setzen. **Enforce HTTPS** aktivieren.
 
-Hinweis: Die Seite `404.html` verwendet absolute Pfade mit `/website/…` (passend zu 1dailyai.github.io/website). Bei einer eigenen Domain dort `/website/` durch `/` ersetzen, ebenso die og:image-Adresse in allen Seiten. Alle anderen Seiten nutzen relative Pfade und laufen auch unter `benutzer.github.io/repo/`.
+Hinweis: Die Seite `404.html` verwendet `<base href="/website/">` und absolute Pfade mit `/website/…` (passend zu 1dailyai.github.io/website). Bei einer eigenen Domain dort `/website/` durch `/` ersetzen, ebenso die og:image-Adresse in allen Seiten. Alle anderen Seiten nutzen relative Pfade und laufen auch unter `benutzer.github.io/repo/`.
 
 ## Formulare aktivieren (Formspree)
 

@@ -62,19 +62,29 @@
   /* 3) Kennzahlen zählen hoch ------------------------------------------ */
   var nums = Array.prototype.slice.call(document.querySelectorAll('.rules .big, .funds .gold, .count'));
   var easeOut = function (t) { return 1 - Math.pow(1 - t, 3); };
+  var isEN = root.lang === 'en', TS = isEN ? ',' : "'", DS = isEN ? '.' : ',';
+  var numRe = isEN ? /^(\d{1,3}(?:,\d{3})+|\d+)(\.\d+)?(.*)$/ : /^(\d{1,3}(?:'\d{3})+|\d+)([.,]\d+)?(.*)$/;
+  var group = function (s) { return s.replace(/\B(?=(\d{3})+(?!\d))/g, TS); };
   nums.forEach(function (el) {
-    var m = el.textContent.match(/^(\d+(?:[.,]\d+)?)(.*)$/);
+    var m = el.textContent.match(numRe);
     if (!m) return;
-    el.dataset.target = m[1]; el.dataset.suffix = m[2];
-    el.textContent = '0' + m[2];
+    var dec = m[2] ? m[2].length - 1 : 0;
+    el.dataset.target = m[1].replace(/[',]/g, '') + (m[2] ? '.' + m[2].slice(1) : '');
+    el.dataset.dec = dec; el.dataset.grp = /[',]/.test(m[1]) ? '1' : '';
+    el.dataset.suffix = m[3];
+    el.textContent = '0' + m[3];
   });
   io(nums.filter(function (el) { return el.dataset.target; }), function (el) {
-    var target = parseFloat(el.dataset.target.replace(',', '.')), suf = el.dataset.suffix;
-    var dec = (el.dataset.target.split(/[.,]/)[1] || '').length, dur = 1400, t0 = null;
+    var target = parseFloat(el.dataset.target), suf = el.dataset.suffix;
+    var dec = +el.dataset.dec || 0, grp = !!el.dataset.grp, dur = 1400, t0 = null;
+    var out = function (v) {
+      var s = v.toFixed(dec).split('.'), i = grp ? group(s[0]) : s[0];
+      return i + (dec ? DS + s[1] : '') + suf;
+    };
     var tick = function (ts) {
       if (!t0) t0 = ts;
-      var p = Math.min(1, (ts - t0) / dur), v = target * easeOut(p);
-      el.textContent = (dec ? v.toFixed(dec).replace('.', ',') : Math.round(v)) + suf;
+      var p = Math.min(1, (ts - t0) / dur);
+      el.textContent = out(target * easeOut(p));
       if (p < 1) requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
