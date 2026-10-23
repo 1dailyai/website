@@ -654,3 +654,8 @@ a.card{color:inherit}
 /* Startseite: vier Kernaussagen im 2×2-Raster */
 .g2x{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media (max-width:760px){.g2x{grid-template-columns:1fr}}
+
+/* Zwischentitel: engerer Zeilenabstand bei mehrzeiligen Titeln (v. a. Handy) */
+h3{line-height:1.2}
+.card h3{line-height:1.12}
+.story-row h3{line-height:1.2}
