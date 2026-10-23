@@ -181,8 +181,7 @@ def header(lang, page, a):
         mm.append(f'<details><summary>{label}</summary><div>{inner}</div></details>')
     de_cur = ' aria-current="true"' if lang == "de" else ""
     en_cur = ' aria-current="true"' if lang == "en" else ""
-    return f'''<div class="kbar"><div class="wrap"><span>{t["bar"]}</span><div class="kbar-r"><a href="{t["contact_href"]}">{t["contact"]}</a><span class="klang" role="group" aria-label="{t["lang"]}"><a href="{de_href}" data-lang="de" hreflang="de" lang="de"{de_cur}>DE</a><a href="{en_href}" data-lang="en" hreflang="en" lang="en"{en_cur}>EN</a></span></div></div></div>
-<header class="site-header"><div class="wrap">
+    return f'''<header class="site-header"><div class="wrap">
 <a class="wordmark" href="index.html" aria-label="{t["home"]}"><img class="logo" src="{a}img/logo-1daily.svg" alt="" width="78" height="30"></a>
 <nav class="knav" aria-label="{t["nav"]}"><ul>{"".join(items)}</ul></nav>
 <div class="hdr-right"><a class="btn btn-dark btn-sm" href="investor-relations.html#form">{t["cta"]}</a><button class="burger" type="button" data-menu="open" aria-label="{t["menu_open"]}" aria-expanded="false" aria-controls="mmenu"><svg width="26" height="26" viewBox="0 0 28 28" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h20M4 14h20M4 20h20"/></svg></button></div>
