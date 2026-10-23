@@ -14,7 +14,7 @@ import os, re, html
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "klassik")
 SRC = os.path.join(ROOT, "tools", "klassik")
-CSS_V = "2"
+CSS_V = "3"
 
 # Seitenzuordnung DE <-> EN
 PAGES = [  # (key, de, en, group)
@@ -260,7 +260,8 @@ def build_page(lang, page):
     main = add_section_ids(rest[i_main:i_end], lang)
     tail = rest[i_end:]
     tail = re.sub(r"<footer class=\"site-footer\">.*?</footer>\n?", "", tail, flags=re.S)
-    tail = re.sub(r'<script src="[^"]*anim\.js[^"]*"></script>\n?', "", tail)
+    if "anim.js" not in tail:  # gleiche Animationen wie die Hauptfassung
+        tail = re.sub(r'(<script src="[^"]*main\.js)', '<script src="' + a + 'js/anim.js?v=6"></script>\n\\1', tail, count=1)
     body_open = f'<body class="klassik">\n<a class="skip" href="#main">{T[lang]["skip"]}</a>\n'
     out = head + "</head>\n" + body_open + header(lang, page, a) + main + "\n" + footer(lang, page, a) + tail.lstrip("\n")
     dest = os.path.join(OUT, fname if lang == "de" else "en/" + fname)
