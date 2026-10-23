@@ -160,9 +160,6 @@ def lang_links(lang, page):
 
 
 def old_design_link(lang, page):
-    key = page[0]
-    if key in ("principles",):
-        return "../index.html" if lang == "de" else "../../en/index.html"
     return ("../" + page[1]) if lang == "de" else ("../../en/" + page[2])
 
 

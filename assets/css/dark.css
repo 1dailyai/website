@@ -103,3 +103,9 @@ html[data-theme="dark"] .mfrac span:first-child{border-color:#F5F5F5}
 html[data-theme="dark"] .mpdf{border:1.5px solid #3A301C}
 html[data-theme="dark"] .tr-card{background:linear-gradient(160deg,#17130B 0%,#100E0A 100%);border-color:#3A301C}
 html[data-theme="dark"] .tr-ver{background:rgba(0,0,0,.3);border-color:#3A301C}
+
+/* Navigation mit Untermenüs, Fusszeile – dunkel */
+html[data-theme="dark"] .ddp-in{background:#121212;border-color:#3A301C;box-shadow:0 40px 80px -40px rgba(0,0,0,.9)}
+html[data-theme="dark"] .ddp li a{border-bottom-color:#252525}
+html[data-theme="dark"] .toc a{border-color:#3A301C;color:#DADADA}
+html[data-theme="dark"] .foot-cols{border-bottom-color:#1E1E1E}
