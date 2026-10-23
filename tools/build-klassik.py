@@ -14,7 +14,7 @@ import os, re, html
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "klassik")
 SRC = os.path.join(ROOT, "tools", "klassik")
-CSS_V = "1"
+CSS_V = "2"
 
 # Seitenzuordnung DE <-> EN
 PAGES = [  # (key, de, en, group)
