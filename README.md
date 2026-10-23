@@ -7,6 +7,7 @@ Statische, zweisprachige Website (Deutsch / Englisch) ohne Build-Schritt. Läuft
 ```
 /                         Deutsch (Standard)
   index.html              Startseite mit Video-Hero
+  grundsaetze.html        Grundsätze (neu)
   vision.html             Vision & Philosophie
   goldmarkt.html          Goldmarkt mit 3D-Globus der Handelsplätze
   methode.html            Die 1daily-Methode (mit PDF-Download)
@@ -63,3 +64,28 @@ In `assets/js/config.js` `emailInfo` und `emailInvestors` eintragen. Solange lee
 - [ ] Titel im Handelsregister prüfen (Impressum: derzeit «Verwaltungsrat»)
 - [ ] Texte, Risikohinweis und Datenschutzerklärung anwaltlich prüfen lassen
 - [ ] Nach Domain-Festlegung: `sitemap.xml` ergänzen und in `robots.txt` verlinken
+
+## Inhaltsstruktur und Navigation (Oktober 2026)
+
+Hauptmenü mit Untermenüs nach Vorbild hotz-partner.ch: Grundsätze · Goldmarkt · Methode · Investoren · Unternehmen. Neue Seite `grundsaetze.html` / `en/principles.html`, neue Startseite, Fusszeile mit Sitemap.
+
+- Menüpunkte werden zentral in `tools/build-klassik.py` (Liste `NAV`) gepflegt.
+- `python3 tools/build-struktur.py` schreibt Kopfzeile, mobiles Menü und Fusszeile in alle Seiten der Hauptfassung und ergänzt Sprungmarken. Inhalt zwischen `<main>` und `</main>` bleibt unberührt.
+- Danach `python3 tools/build-klassik.py`, damit die Klassik-Fassung dieselben Inhalte erhält.
+
+## Design-Variante «Klassik» (Vorschlag Oktober 2026)
+
+Klassischere Fassung mit Marineblau statt Gold, Serifenschrift für Titel, ruhigeren Formen und einer Navigation mit Dropdown-Menüs (Grundsätze · Goldmarkt · Methode · Investoren · Unternehmen). Die bisherige Fassung im Hauptordner bleibt unverändert.
+
+```
+/klassik/                 Klassik-Fassung DE (inkl. neuer Seite grundsaetze.html), /klassik/en/ EN (inkl. principles.html)
+/assets/css/klassik.css   Design-Layer, wird nach style.css geladen
+/assets/fonts/source-serif-4-*.woff2   Serifenschrift (SIL Open Font License), lokal gehostet
+/tools/build-klassik.py   überträgt die bestehenden Seiten in /klassik/ (Kopf, Fuss, Sprungmarken)
+/tools/klassik/           Quellen der neuen Startseite und der Grundsätze-Seite (DE/EN)
+```
+
+- Texte weiterhin nur an den bestehenden Seiten ändern, danach `python3 tools/build-klassik.py` ausführen.
+- Die Klassik-Seiten tragen `noindex`, solange die bisherige Fassung Standard ist.
+- Unten auf jeder Klassik-Seite führt «Bisheriges Design ansehen» zur selben Seite in der alten Fassung.
+- Klassik zum Standard machen: bisherige Seiten nach `/bisher/` verschieben, Inhalt von `/klassik/` in den Hauptordner, Pfade `../assets/` → `assets/` anpassen und `noindex` entfernen (gerne von Claude erledigen lassen).
