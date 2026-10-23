@@ -335,3 +335,13 @@ html{scroll-padding-top:96px}
 main h2[style*="font-size"]{font-size:clamp(30px,3.8vw,52px)!important;line-height:1.15!important}
 .ocean-close{font-weight:600;letter-spacing:-.01em}
 .funds .gold{font-family:var(--serif);font-weight:600!important}
+
+/* Startseite: vier Kernaussagen im 2×2-Raster */
+.kpillars.k2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:600px){.kpillars.k2{grid-template-columns:1fr}}
+
+/* Handy: Buttons in einer Gruppe gleich breit untereinander */
+@media (max-width:600px){
+  .ctas{flex-direction:column;align-items:stretch;width:100%}
+  .ctas .btn{width:100%;justify-content:center;text-align:center}
+}
