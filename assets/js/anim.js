@@ -10,7 +10,7 @@
   if (reduce) { root.classList.add('no-motion'); return; }
 
   /* 1) Hero-Titel ------------------------------------------------------ */
-  var h1 = document.querySelector('.hero h1, .page-hero h1');
+  var h1 = document.querySelector('.hero h1, .page-hero h1, .khero h1');
   if (h1) {
     var n = 0, base = 0.15, step = 0.075;
     h1.classList.remove('up', 'u1');
